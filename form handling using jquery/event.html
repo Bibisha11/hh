@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Events Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <p id="p1">Click me to hide!</p>
+    <p id="p2">Hover or press mouse here!</p>
+
+    <script>
+        $(document).ready(function() {
+            // Click event
+            $("p").click(function() {
+                console.log('You clicked on a paragraph');
+                $('#p').hide(); // hides the clicked paragraph
+            });
+
+            // // Mouse enter event
+            // $("#p1").mouseenter(function() {
+            //     alert("You entered p1");
+            // });
+
+            // // Mouse down event
+            // $("#p2").mousedown(function() {
+            //     alert("You pressed down the mouse button on p2");
+            // });
+        });
+    </script>
+</body>
+</html>

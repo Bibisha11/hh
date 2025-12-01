@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form handling using jquery</title>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("#myform").submit(function(event){
+                event.preventDefault(); // Prevent the default form submission
+                var formData = $(this).serialize(); // Serialize form data
+               
+                });
+            });
+
+    </script>
+</body>
+</html>
