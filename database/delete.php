@@ -5,8 +5,8 @@ require 'connect.php';
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = (int)$_GET['id'];
 
-    // Delete the form record
-    $sql = "DELETE FROM Form WHERE id = $id";
+    // Correct table name and safe delete
+    $sql = "DELETE FROM form WHERE id = $id";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {

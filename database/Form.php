@@ -58,8 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         include 'connect.php';
 
-        // Check duplicate name
-        $stmtCheck = $conn->prepare("SELECT * FROM form WHERE name = ?");
+        // Check duplicate (CORRECT COLUMN NAME)
+        $stmtCheck = $conn->prepare("SELECT * FROM form WHERE Username = ?");
         if (!$stmtCheck) {
             die("Prepare failed: " . $conn->error);
         }
@@ -75,8 +75,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Hash password
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            // Insert
-            $stmt = $conn->prepare("INSERT INTO form (name, email, password, mobile) VALUES (?, ?, ?, ?)");
+            // Insert (CORRECT COLUMN NAMES)
+            $stmt = $conn->prepare("INSERT INTO form (Username, Email, Password, mobile) VALUES (?, ?, ?, ?)");
             if (!$stmt) {
                 die("Prepare failed: " . $conn->error);
             }
